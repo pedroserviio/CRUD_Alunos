@@ -1,0 +1,22 @@
+<table class="table table-striped table-light">
+    <thead>
+        <tr>
+            <th>ID do Aluno</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Nota</th>
+            <th>Aprovado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row"> {{ aluno.id }} </td>
+            <td> {{ aluno.nome | uppercase }}</td>
+            <td> {{ aluno.idade }}</td>
+            <td> {{ aluno.nota }}</td>
+            <td> {{ aluno.isAprovado }} </td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-primary" (click)="voltar()">Voltar</button>

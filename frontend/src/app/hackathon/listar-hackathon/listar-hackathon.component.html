@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-12">
+        <label for="exampleDataList" class="form-label">
+            <strong>Filtro de pesquisa:</strong>
+        </label>
+        <input class="form-control" type="search" list="datalistOptions"
+            [(ngModel)]="filtroDePesquisa" id="exampleDataList" placeholder="Pesquisar aluno">
+
+        <table class="table table-striped table-hover table-light" *ngIf="carregarLoading; else carregando">
+            <thead>
+                <tr> <!-- Ordena ao clicar no header-->
+                    <th (click)="sort('id')">ID do Aluno <span *ngIf="key =='id' ">{{reverse ? '▲' : '▼'}}</span></th>
+                    <th (click)="sort('nome')">Nome <span *ngIf="key =='nome' ">{{reverse ? '▲' : '▼'}}</span></th>
+                    <th (click)="sort('nota')">Nota <span *ngIf="key =='nota' ">{{reverse ? '▲' : '▼'}}</span></th>
+                    <th> Perfil do Aluno</th>
+                    <th> Editar Aluno</th>
+                    <th> Excluir Aluno</th>
+                </tr>
+            </thead>
+            <tbody> <!-- Ao clicar em cima de algum objeto, é encaminhado para outra page com mais dados sobre ele-->
+                <tr *ngFor="let aluno of alunos | orderBy: key : reverse | filter:filtroDePesquisa">
+                    <td (click)="descricao(aluno)">
+                        {{ aluno.id }}
+                    </td>
+                    <td (click)="descricao(aluno)">
+                        {{ aluno.nome | uppercase}}
+                    </td>
+                    <td (click)="descricao(aluno)">
+                        {{ aluno.nota }}
+                    </td>
+                    <td>
+                        <button class="btn btn-success" (click)="descricao(aluno)">Perfil</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info" (click)="editar(aluno)">Editar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="excluir(aluno)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+            <button class="btn btn-info" (click)="irCadastro()"> Novo Aluno</button>
+        </table>
+    </div>
+</div>
+
+<ng-template #carregando>
+    <div class="loader">Loading...</div>
+</ng-template>

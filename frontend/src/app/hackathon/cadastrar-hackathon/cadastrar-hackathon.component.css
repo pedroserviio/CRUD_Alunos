@@ -1,0 +1,10 @@
+.container {
+    background-color: white;
+    border: 1px solid white;
+}
+label {
+    color: black;
+}
+button {
+    margin: 10px 0px 10px 15px;
+}
