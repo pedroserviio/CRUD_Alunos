@@ -11,15 +11,17 @@ import { HackathonService } from 'src/app/services/hackathon.service';
 export class DescricaoComponent implements OnInit {
 
   id: any;
-  aluno!: HackathonModel;
-
+  aluno: HackathonModel = {} as HackathonModel;
+  
   constructor(private route: Router, private activatedRoute: ActivatedRoute, private service: HackathonService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(parametros => {
       if(parametros['id']) {
         this.id = parametros['id'];
+        
         this.service.buscarId(this.id).subscribe(alun => {
+          console.log(alun);
           this.aluno = alun;
         })
       }

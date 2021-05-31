@@ -1,7 +1,7 @@
 export interface HackathonModel {
-    id: string;
+    id: any;
     nome: string;
     idade: number;
     nota: number;
-    isAprovado?: boolean;
+    situacao?: string;
 }

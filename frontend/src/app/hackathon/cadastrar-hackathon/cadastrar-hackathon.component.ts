@@ -12,10 +12,10 @@ import { HackathonService } from 'src/app/services/hackathon.service';
 })
 export class CadastrarHackathonComponent implements OnInit {
 
-  hackathon!: HackathonModel;
-  nomePattern = "^[a-zA-Z]$"  
+  hackathon: HackathonModel = {} as HackathonModel;
+  nomePattern = "^[a-zA-Z]$"
   cadastroForm: FormGroup = new FormGroup({
-    nome: new FormControl('',[ Validators.required, Validators.pattern(this.nomePattern)]),
+    nome: new FormControl('', [Validators.required, Validators.pattern(this.nomePattern)]),
     idade: new FormControl('', Validators.required),
     nota: new FormControl(0, [Validators.required])
   })
@@ -29,7 +29,7 @@ export class CadastrarHackathonComponent implements OnInit {
       if (parametros['id']) {
         this.textoBotao = 'Editar'
         this.id = parametros['id']
-        
+
         this.service.buscarId(this.id).subscribe(hack => {
           console.log(hack);
           this.hackathon = hack;
@@ -51,10 +51,9 @@ export class CadastrarHackathonComponent implements OnInit {
         response => {
           this.toastr.success(response.mensagem);
         },
-        (err) => this.toastr.error(err.mensagem)
+        (error) => this.toastr.error('Erro na requisição')
       );
     } else {
-      console.log("this hack", this.hackathon);
       this.editar();
     }
 
@@ -68,10 +67,14 @@ export class CadastrarHackathonComponent implements OnInit {
       idade: this.cadastroForm.get('idade')?.value,
       nota: this.cadastroForm.get('nota')?.value,
     };
-    
-    this.service.editar(this.id, this.hackathon).subscribe(hack => {
-      this.hackathon = hack;
-    })
+
+    this.service.editar(this.id, this.hackathon).subscribe(
+      (hack) => {
+        this.hackathon = hack;
+        this.toastr.success('Editado com sucesso!');
+      },
+      (error) => this.toastr.error('Erro na requisição')
+    )
   }
 
   voltar() {

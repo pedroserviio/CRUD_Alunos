@@ -2,15 +2,15 @@
   <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
     <div class="col-3">
       <label for="tx-nome" class="form-label">Nome:</label>
-      <input type="text" formControlName="nome" class="form-control" id="tx-nome">
+      <input type="text" formControlName="nome" class="form-control" id="tx-nome" required>
     </div>
     <div class="col-3">
       <label for="tx-nome" class="form-label">Idade:</label>
-      <input type="number" formControlName="idade" class="form-control" id="tx-idade">
+      <input type="number" formControlName="idade" class="form-control" id="tx-idade" min="0" required>
     </div>
     <div class="col-3">
       <label for="tx-nota" class="form-label">Nota:</label>
-      <input type="text" formControlName="nota" class="form-control" id="tx-nota">
+      <input type="number" formControlName="nota" class="form-control" id="tx-nota" min="0" max="10" required>
     </div>
     <div>
       <button type="submit" class="btn btn-info">{{ textoBotao }}</button>

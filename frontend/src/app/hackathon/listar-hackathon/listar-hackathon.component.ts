@@ -33,16 +33,19 @@ export class ListarHackathonComponent implements OnInit {
   }
 
   excluir(aluno: HackathonModel) {
-    this.service.excluir(aluno.id as string).subscribe(() => {
+    this.service.excluir(aluno.id as string).subscribe(
+      (success) => {
       const index = this.alunos.findIndex((a) => a.id === aluno.id);
       this.alunos.splice(index, 1);
-      this.toastr.success(`Excluido com sucesso!`);
-    });
+      this.toastr.success('Excluido com sucesso!');
+    },
+      (error) => this.toastr.error('Erro na Requisição')
+    );
 
   }
 
   editar(aluno: HackathonModel) {
-    this.route.navigate(['/cadastrar', aluno]);
+    this.route.navigate(['/cadastrar', aluno.id]);
   }
 
   sort = (key: any) => {
