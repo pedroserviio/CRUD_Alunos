@@ -1,3 +1,28 @@
+.container {
+    border: 1px solid;
+    background-color: rgb(247, 247, 247);
+}
+.container > h2 {
+    font-family: 'Times New Roman', Times, serif;
+}
+.media-body > p > strong {
+    color: #278495;
+}
+.container-fluid {
+    border: 1px solid;
+    background-color: whitesmoke;
+    margin-top: 15px;
+}
+.container-fluid > h5 {
+    color: #278495;
+}
+h1 {
+    display: flex;
+}
 button {
+    margin-top: 5px;
     float: right;
+}
+img {
+    width: 250px;
 }

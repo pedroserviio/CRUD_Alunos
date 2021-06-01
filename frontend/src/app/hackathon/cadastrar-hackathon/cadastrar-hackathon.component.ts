@@ -16,7 +16,11 @@ export class CadastrarHackathonComponent implements OnInit {
   nomePattern = "^[a-zA-Z]$"
   cadastroForm: FormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required, Validators.pattern(this.nomePattern)]),
+    sobrenome: new FormControl('', [Validators.required, Validators.pattern(this.nomePattern)]),
+    curso: new FormControl('', [Validators.required, Validators.pattern(this.nomePattern)]),
     idade: new FormControl('', Validators.required),
+    filiacaoMae: new FormControl('', [Validators.required, Validators.pattern(this.nomePattern)]),
+    filiacaoPai: new FormControl('', [Validators.required, Validators.pattern(this.nomePattern)]),
     nota: new FormControl(0, [Validators.required])
   })
   textoBotao: string = 'Cadastrar'
@@ -43,7 +47,11 @@ export class CadastrarHackathonComponent implements OnInit {
       this.hackathon = {
         id: this.cadastroForm.get('id')?.value,
         nome: this.cadastroForm.get('nome')?.value,
+        sobrenome: this.cadastroForm.get('sobrenome')?.value,
+        curso: this.cadastroForm.get('curso')?.value,
         idade: this.cadastroForm.get('idade')?.value,
+        filiacaoMae: this.cadastroForm.get('filiacaoMae')?.value,
+        filiacaoPai: this.cadastroForm.get('filiacaoPai')?.value,
         nota: this.cadastroForm.get('nota')?.value,
       };
 
@@ -64,7 +72,11 @@ export class CadastrarHackathonComponent implements OnInit {
     this.hackathon = {
       id: this.cadastroForm.get('id')?.value,
       nome: this.cadastroForm.get('nome')?.value,
+      sobrenome: this.cadastroForm.get('sobrenome')?.value,
+      curso: this.cadastroForm.get('curso')?.value,
       idade: this.cadastroForm.get('idade')?.value,
+      filiacaoMae: this.cadastroForm.get('filiacaoMae')?.value,
+      filiacaoPai: this.cadastroForm.get('filiacaoPai')?.value,
       nota: this.cadastroForm.get('nota')?.value,
     };
 

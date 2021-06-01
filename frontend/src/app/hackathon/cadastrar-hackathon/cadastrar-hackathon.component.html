@@ -1,20 +1,103 @@
 <div class="container">
+  <h2>Cadastro de Alunos:</h2>
   <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
-    <div class="col-3">
-      <label for="tx-nome" class="form-label">Nome:</label>
-      <input type="text" formControlName="nome" class="form-control" id="tx-nome" required>
+    <div class="form-row">
+      <div class="col-md-6">
+        <strong>Dados básicos:</strong>
+        <label for="tx-nome" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="nome"
+          class="form-control"
+          id="tx-nome"
+          placeholder="Nome"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="tx-sobrenome" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="sobrenome"
+          class="form-control"
+          id="tx-sobrenome"
+          placeholder="Sobrenome"
+          required
+        />
+      </div>
     </div>
-    <div class="col-3">
-      <label for="tx-nome" class="form-label">Idade:</label>
-      <input type="number" formControlName="idade" class="form-control" id="tx-idade" min="0" required>
+    <div class="form-row">
+      <div class="col-md-6">
+        Filiação:
+        <label for="tx-filiacaoMae" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="filiacaoMae"
+          class="form-control"
+          id="tx-filiacaoMae"
+          placeholder="Mãe"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="tx-filiacaoPai" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="filiacaoPai"
+          class="form-control"
+          id="tx-filiacaoPai"
+          placeholder="Pai"
+          required
+        />
+      </div>
     </div>
-    <div class="col-3">
+    <div class="form-group" style="margin-top: 10px">
+      Idade:
+      <label for="tx-idade" class="form-label"></label>
+      <input
+        type="number"
+        formControlName="idade"
+        class="form-control"
+        id="tx-idade"
+        min="0"
+        required
+      />
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <h5>Central de Aprendizagem:</h5>
+        <label for="tx-nome" class="form-label">Curso:</label>
+        <input
+          type="text"
+          formControlName="curso"
+          class="form-control"
+          id="tx-curso"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group">
       <label for="tx-nota" class="form-label">Nota:</label>
-      <input type="number" formControlName="nota" class="form-control" id="tx-nota" min="0" max="10" required>
+      <input
+        type="number"
+        formControlName="nota"
+        class="form-control"
+        id="tx-nota"
+        min="0"
+        max="10"
+        required
+      />
     </div>
     <div>
       <button type="submit" class="btn btn-info">{{ textoBotao }}</button>
-      <button type="submit" class="btn btn-info" (click)="voltar()"> Voltar </button>
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="margin-left: 8px"
+        (click)="voltar()"
+      >
+        Voltar
+      </button>
     </div>
   </form>
 </div>
