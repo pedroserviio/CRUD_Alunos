@@ -1,19 +1,45 @@
 .container {
     background-color: white;
+    margin: 5% auto 15% auto;
     border: 1px solid white;
+    padding: 16px;
+}
+.container > h2 {
+    margin:0 0 50px 0;
+    padding:10px;
+    text-align:center;
+    font-size:30px;
+    color: darken(#e5e5e5, 50%);
+    border-bottom:solid 1px #e5e5e5;
+}
+.form-horizontal {
+    color: darken(#e5e5e5, 50%);
+    text-transform: uppercase;
 }
 .form-row {
     margin-bottom: 10px;
 }
-#tx-idade {
-    width: 150px;
-}
-#tx-nota {
-    width: 150px;
-}
 label {
     color: black;
 }
-button {
-    margin-bottom: 10px;
+#voltar-btn {
+    float: right;
+    padding: .4.5rem 0.5rem;
+    font-size: .95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #278495;
+    border-radius: remy(35px);
+    margin-bottom: 5px;
+}
+#cadastro-btn {
+    width: 100%;
+    padding: .5rem 2.5rem;
+    font-size: .95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #278495;
+    border-radius: remy(35px);
 }

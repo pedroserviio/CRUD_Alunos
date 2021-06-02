@@ -1,6 +1,15 @@
 <div class="container">
-  <h2>Cadastro de Alunos:</h2>
-  <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
+  <h2>
+    Registro de Alunos:
+    <button class="btn btn-info" id="voltar-btn" (click)="voltar()">
+      Voltar
+    </button>
+  </h2>
+  <form
+    class="form-horizontal"
+    [formGroup]="cadastroForm"
+    (ngSubmit)="cadastrar()"
+  >
     <div class="form-row">
       <div class="col-md-6">
         <strong>Dados básicos:</strong>
@@ -25,10 +34,44 @@
           required
         />
       </div>
+      <div class="col-md-5">
+        <label for="tx-cpf" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="cpf"
+          class="form-control"
+          id="tx-cpf"
+          placeholder="CPF"
+          required
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="tx-rg" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="rg"
+          class="form-control"
+          id="tx-rg"
+          placeholder="RG"
+          required
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="tx-idade" class="form-label"></label>
+        <input
+          type="number"
+          formControlName="idade"
+          class="form-control"
+          id="tx-idade"
+          min="0"
+          placeholder="Idade"
+          required
+        />
+      </div>
     </div>
     <div class="form-row">
       <div class="col-md-6">
-        Filiação:
+        <strong>Filiação:</strong>
         <label for="tx-filiacaoMae" class="form-label"></label>
         <input
           type="text"
@@ -51,52 +94,115 @@
         />
       </div>
     </div>
-    <div class="form-group" style="margin-top: 10px">
-      Idade:
-      <label for="tx-idade" class="form-label"></label>
-      <input
-        type="number"
-        formControlName="idade"
-        class="form-control"
-        id="tx-idade"
-        min="0"
-        required
-      />
+    <div class="form-row">
+      <div class="col-md-3">
+        <strong>Endereço:</strong>
+        <label for="tx-cep" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="cep"
+          class="form-control"
+          id="tx-cep"
+          placeholder="CEP"
+          required
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="tx-numero" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="numero"
+          class="form-control"
+          id="tx-numero"
+          placeholder="Número"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="tx-complemento" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="complemento"
+          class="form-control"
+          id="tx-complemento"
+          placeholder="Complemento (opcional)"
+        />
+      </div>
+      <div class="col-sm-12">
+        <label for="tx-rua" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="rua"
+          class="form-control"
+          id="tx-rua"
+          placeholder="Rua"
+          required
+        />
+      </div>
+      <div class="col-md-5">
+        <label for="tx-bairro" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="bairro"
+          class="form-control"
+          id="tx-bairro"
+          placeholder="Bairro"
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="tx-cidade" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="cidade"
+          class="form-control"
+          id="tx-cidade"
+          placeholder="Cidade"
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="tx-estado" class="form-label"></label>
+        <input
+          type="text"
+          formControlName="estado"
+          class="form-control"
+          id="tx-estado"
+          placeholder="Estado"
+        />
+      </div>
     </div>
     <div class="form-row">
-      <div class="col-md-6">
-        <h5>Central de Aprendizagem:</h5>
-        <label for="tx-nome" class="form-label">Curso:</label>
+      <div class="col-sm-9">
+        <strong>Central de Aprendizagem:</strong> <br>
+        <label for="tx-nome" style="font-size: 15px" class="form-label"
+          >Curso:</label
+        >
         <input
           type="text"
           formControlName="curso"
           class="form-control"
           id="tx-curso"
+          placeholder="Nome do curso"
+          required
+        />
+      </div>
+      <div class="col-sm-3"> <br>
+        <label for="tx-nota" style="font-size: 15px" class="form-label"><br></label>
+        <input
+          type="number"
+          formControlName="nota"
+          class="form-control"
+          id="tx-nota"
+          min="0"
+          max="10"
+          placeholder="Nota"
           required
         />
       </div>
     </div>
-    <div class="form-group">
-      <label for="tx-nota" class="form-label">Nota:</label>
-      <input
-        type="number"
-        formControlName="nota"
-        class="form-control"
-        id="tx-nota"
-        min="0"
-        max="10"
-        required
-      />
-    </div>
+
     <div>
-      <button type="submit" class="btn btn-info">{{ textoBotao }}</button>
-      <button
-        type="submit"
-        class="btn btn-info"
-        style="margin-left: 8px"
-        (click)="voltar()"
-      >
-        Voltar
+      <button type="submit" id="cadastro-btn" class="btn btn-info">
+        {{ textoBotao }}
       </button>
     </div>
   </form>

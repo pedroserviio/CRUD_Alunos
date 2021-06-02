@@ -1,6 +1,7 @@
 .container {
     border: 1px solid;
     background-color: rgb(247, 247, 247);
+    margin: 5% auto auto;
 }
 .container > h2 {
     font-family: 'Times New Roman', Times, serif;

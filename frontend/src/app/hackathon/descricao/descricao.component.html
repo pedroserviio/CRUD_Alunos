@@ -30,16 +30,38 @@
 
 <div class="container-fluid">
     <h5>Identificaçao:</h5>
-    <label for="id"><strong>Idade:</strong></label>
+    <label for="cpf"><strong>CPF:</strong></label>
+    <span> {{ aluno.cpf }} </span>
+    <label for="rg" style="margin-left: 33%;"><strong>RG:</strong></label>
+    <span> {{ aluno.rg }} </span>
+    <label for="idade" style="margin-left: 33%;"><strong>Idade:</strong></label>
     <span> {{ aluno.idade }} </span>
 </div>
 
 <div class="container-fluid">
     <h5>Filiação:</h5>
-    <label for="id"><strong>Mãe:</strong></label>
+    <label for="mae"><strong>Mãe:</strong></label>
     <span> {{ aluno.filiacaoMae }}<br></span>
-    <label for="id"><strong>Pai:</strong></label>
+    <label for="pai"><strong>Pai:</strong></label>
     <span> {{ aluno.filiacaoPai }} </span>
+</div>
+
+<div class="container-fluid">
+  <h5>Endereço:</h5>
+  <label for="cep"><strong>CEP:</strong></label>
+  <span> {{ aluno.cep }}</span>
+  <label for="numero" style="margin-left: 14.7%;"><strong>Número:</strong></label>
+  <span> {{ aluno.numero }} </span>
+  <label for="complemento" style="margin-left: 17.7%;"><strong>Complemento:</strong></label>
+  <span> {{ aluno.complemento}} <br></span>
+  <label for="rua"><strong>Rua:</strong></label>
+  <span> {{ aluno.rua }} </span>
+  <label for="bairro" style="margin-left: 14%;"><strong>Bairro:</strong></label>
+  <span> {{ aluno.bairro }} </span>
+  <label for="cidade" style="margin-left: 14%;"><strong>Cidade:</strong></label>
+  <span> {{ aluno.cidade }} </span>
+  <label for="estado" style="margin-left: 14%;"><strong>Estado:</strong></label>
+  <span> {{ aluno.estado }} </span>
 </div>
 
 <button type="button" class="btn btn-primary" (click)="voltar()">Voltar</button>

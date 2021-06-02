@@ -9,16 +9,24 @@ class HackathonRespository {
         const index = alunos.findIndex((a) => a.id === id);
         const aluno = alunos[index];
 
-        const { nome, nota, idade, situacao } = hackathon;
+        const { nome, sobrenome, cpf, rg, filiacaoMae, filiacaoPai, nota, idade, curso, situacao } = hackathon;
         aluno.nome = nome;
+        aluno.sobrenome = sobrenome;
+        aluno.cpf = cpf;
+        aluno.rg = rg;
+        aluno.filiacaoMae = filiacaoMae;
+        aluno.filiacaoPai = filiacaoPai;
+        aluno.curso = curso;
         aluno.nota = nota;
         aluno.idade = idade;
         aluno.situacao = situacao;
+        
         if(aluno.nota >= 5) {
             aluno.situacao = 'Aprovado(a)';
         } else {
             aluno.situacao = 'Reprovado(a)';
         }
+        
         alunos[index] = aluno;
 
         return hackathon;

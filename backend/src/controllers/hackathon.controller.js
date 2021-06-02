@@ -4,36 +4,98 @@ import HackathonRespository from "../repositories/hackathon.repositories";
 import { Validador } from "../utils/validador.util";
 
 export default class HackathonController {
-    async incluir(hackathon) {
-        const { nome, sobrenome, curso, idade, filiacaoMae, filiacaoPai, nota, situacao } = hackathon;
+  async incluir(hackathon) {
+    const {
+      nome,
+      sobrenome,
+      cpf,
+      rg,
+      curso,
+      idade,
+      filiacaoMae,
+      filiacaoPai,
+      cep,
+      numero,
+      complemento,
+      rua,
+      bairro,
+      cidade,
+      estado,
+      nota,
+      situacao,
+    } = hackathon;
 
-        Validador.validarParametro([{ nome }, { sobrenome }, { curso } , { idade }, { filiacaoMae }, { filiacaoPai } , { nota }]);
+    Validador.validarParametro([
+      { nome },
+      { sobrenome },
+      { cpf },
+      { rg },
+      { curso },
+      { idade },
+      { filiacaoMae },
+      { filiacaoPai },
+      { cep },
+      { numero },
+      { rua },
+      { bairro },
+      { cidade },
+      { estado },
+      { nota },
+    ]);
 
-        const aluno = new Hackathon(nome, sobrenome, curso, idade, filiacaoMae, filiacaoPai, nota, situacao);
-        HackathonRespository.inserir(aluno);
-        const mensagem = "Aluno inserido com sucesso";
-        telegramIntegracao.sendMessage(`${mensagem}: ${aluno.nome}`);
+    const aluno = new Hackathon(
+      nome,
+      sobrenome,
+      cpf,
+      rg,
+      curso,
+      idade,
+      filiacaoMae,
+      filiacaoPai,
+      cep,
+      numero,
+      complemento,
+      rua,
+      bairro,
+      cidade,
+      estado,
+      nota,
+      situacao
+    );
 
-        return { mensagem, id: aluno.id };
-    }
+    HackathonRespository.inserir(aluno);
+    const mensagem = "Aluno inserido com sucesso";
+    telegramIntegracao.sendMessage(`${mensagem}: ${aluno.nome}`);
 
-    async alterar(id, hackathon) {
-        const { nome, sobrenome, curso, idade, filiacaoMae, filiacaoPai, nota } = hackathon
+    return { mensagem, id: aluno.id };
+  }
 
-        Validador.validarParametro([{ nome }, { sobrenome }, { curso } , { idade }, { filiacaoMae }, { filiacaoPai } , { nota }]);
+  async alterar(id, hackathon) {
+    const { nome, sobrenome, curso, idade, filiacaoMae, filiacaoPai, nota } =
+      hackathon;
 
-        return HackathonRespository.alterar(id, hackathon);
-    }
+    Validador.validarParametro([
+      { nome },
+      { sobrenome },
+      { curso },
+      { idade },
+      { filiacaoMae },
+      { filiacaoPai },
+      { nota },
+    ]);
 
-    async excluir(id) {
-        return HackathonRespository.excluir(id);
-    }
+    return HackathonRespository.alterar(id, hackathon);
+  }
 
-    async obter(id) {
-        return HackathonRespository.obter(id);
-    }
+  async excluir(id) {
+    return HackathonRespository.excluir(id);
+  }
 
-    async listar() {
-        return HackathonRespository.listar();
-    }
+  async obter(id) {
+    return HackathonRespository.obter(id);
+  }
+
+  async listar() {
+    return HackathonRespository.listar();
+  }
 }
