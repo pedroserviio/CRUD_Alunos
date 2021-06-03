@@ -117,6 +117,6 @@ export class CadastrarHackathonComponent implements OnInit {
   }
 
   voltar() {
-    this.route.navigate(['']);
+    this.route.navigate(['alunos-lista']);
   }
 }

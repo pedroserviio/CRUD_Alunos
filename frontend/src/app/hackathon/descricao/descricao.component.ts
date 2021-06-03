@@ -29,7 +29,7 @@ export class DescricaoComponent implements OnInit {
   }
 
   voltar() {
-    this.route.navigate(['']);
+    this.route.navigate(['/alunos-lista']);
   }
 
 }

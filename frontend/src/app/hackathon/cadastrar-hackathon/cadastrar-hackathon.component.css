@@ -1,6 +1,6 @@
 .container {
     background-color: white;
-    margin: 5% auto 15% auto;
+    margin: 2% auto 5% auto;
     border: 1px solid white;
     padding: 16px;
 }
@@ -29,7 +29,8 @@ label {
     font-weight: 600;
     text-transform: uppercase;
     color: #fff;
-    background-color: #278495;
+    background: -webkit-gradient(linear, left top, right top, from(#278495), to(#0dcaf0));
+    background: linear-gradient(to right, #278495, #0dcaf0);
     border-radius: remy(35px);
     margin-bottom: 5px;
 }
@@ -40,6 +41,7 @@ label {
     font-weight: 600;
     text-transform: uppercase;
     color: #fff;
-    background-color: #278495;
+    background: -webkit-gradient(linear, left top, right top, from(#278495), to(#0dcaf0));
+    background: linear-gradient(to right, #278495, #0dcaf0);
     border-radius: remy(35px);
 }

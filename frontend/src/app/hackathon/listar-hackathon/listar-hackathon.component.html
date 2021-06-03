@@ -1,10 +1,5 @@
-<div class="row" *ngIf="carregarLoading; else carregando">
-    <div class="col-12">
-        <label for="exampleDataList" class="form-label">
-            <strong>Filtro de pesquisa:</strong>
-        </label>
-        <input class="form-control" type="search" list="datalistOptions"
-            [(ngModel)]="filtroDePesquisa" id="exampleDataList" placeholder="Pesquisar aluno">
+<div class="container" *ngIf="carregarLoading; else carregando">
+    <div id="filtro" class="col-12">
 
         <table class="table table-striped table-hover table-light">
             <thead>
@@ -29,21 +24,33 @@
                         {{ aluno.curso }}
                     </td>
                     <td>
-                        <button class="btn btn-success" (click)="descricao(aluno)">Perfil</button>
+                        <button id="perfil" class="btn btn-success" (click)="descricao(aluno)">Perfil</button>
                     </td>
                     <td>
-                        <button class="btn btn-info" (click)="editar(aluno)">Editar</button>
+                        <button id="editar" class="btn btn-info" (click)="editar(aluno)">Editar</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger" (click)="excluir(aluno)">Excluir</button>
+                        <button id="excluir" class="btn btn-danger" (click)="excluir(aluno)">Excluir</button>
                     </td>
                 </tr>
             </tbody>
-            <button class="btn btn-info" (click)="irCadastro()"> Novo Aluno</button>
         </table>
+        <div id="filtro">
+            <input class="form-control" type="search" list="datalistOptions"
+                [(ngModel)]="filtroDePesquisa" id="exampleDataList" placeholder="Filtro de pesquisa">
+        </div>
+        <button id="cadastrar" class="btn btn-info" (click)="irCadastro()"> Novo Aluno</button>
     </div>
 </div>
 
 <ng-template #carregando>
-    <div class="loader"></div>
+    <div id="preloader">
+        <div class="inner">
+           <div class="bolas">
+              <div></div>
+              <div></div>
+              <div></div>                    
+           </div>
+        </div>
+    </div>
 </ng-template>

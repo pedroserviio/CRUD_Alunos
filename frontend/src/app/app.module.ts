@@ -13,13 +13,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { OrderModule } from 'ngx-order-pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DescricaoComponent } from './hackathon/descricao/descricao.component';
+import { HomeComponent } from './hackathon/home/home/home.component';
+import { ContatoComponent } from './hackathon/contato/contato/contato.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarHackathonComponent,
     CadastrarHackathonComponent,
-    DescricaoComponent
+    DescricaoComponent,
+    HomeComponent,
+    ContatoComponent,
   ],
   imports: [
     BrowserModule,
