@@ -7,7 +7,7 @@ import { HomeComponent } from './hackathon/home/home/home.component';
 import { ListarHackathonComponent } from './hackathon/listar-hackathon/listar-hackathon.component';
 
 const routes: Routes = [
-{ path: '', component: HomeComponent},
+{ path: 'home', component: HomeComponent},
 { path: 'alunos-lista', component: ListarHackathonComponent},
 { path: 'cadastrar', component: CadastrarHackathonComponent},
 { path: 'cadastrar/:id', component: CadastrarHackathonComponent},
